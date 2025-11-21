@@ -1,0 +1,13 @@
+// Basic Test 4: Bool expression evaluation
+// Expected output:
+// true
+
+int x;
+int y;
+bool bigger;
+
+x = 7;
+y = 3;
+
+bigger = x > y;
+print(bigger);
