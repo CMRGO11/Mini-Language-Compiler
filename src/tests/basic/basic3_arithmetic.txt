@@ -1,0 +1,8 @@
+// Basic Test 3: Arithmetic operations
+// Expected output:
+// 14
+
+int x;
+
+x = 2 + 3 * 4;
+print(x);
