@@ -1,0 +1,6 @@
+// Basic Test 1: Only declarations
+// Expected output: (none)
+
+int x;
+int y;
+bool flag;
