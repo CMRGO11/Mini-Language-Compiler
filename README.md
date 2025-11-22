@@ -35,59 +35,66 @@ Mini-Language-Compiler/
 └── README.md
 ```
 
-# 🛠️ How to Run the Compiler (download & test)
+# 🛠️ How to Download and Run the Compiler
 
-1. Download the project as ZIP from GitHub (`Code → Download ZIP`).
-2. Extract the ZIP.
-3. Open a terminal in the extracted folder.
-4. Run
+Running the compiler is very simple — you only need **Python installed** and the project folder.
 
-#### On Windows:
-1. Open **PowerShell** or **Command Prompt**.
-2. Navigate to the folder, e.g.:
-
-```bash
-cd %HOMEPATH%\Desktop\Mini-Language-Compiler-main
-```
-
-#### On Mac/Linux:
-```bash
-cd ~/Downloads/Mini-Language-Compiler-main
-```
+Follow these steps:
 
 ---
 
-### Run all tests automatically
+## 📥 1. Download the Project
 
-If you have Python installed:
-
-```bash
-python run_tests.py
-```
-### After running the tests?
-
-The script will:
-
-- Compile every program inside:
-  - `src/tests/basic/`
-  - `src/tests/control_flow/`
-  - `src/tests/semantic_errors/`
-  - `src/tests/integration/`
-- Generate TAC for each test
-- Simulate execution
-- Print PASS/FAIL for each case
-- Print a final summary:
-
-```
-Total tests: 12
-Passed:      12
-Failed:      0
-🎉 ALL TESTS PASSED SUCCESSFULLY!
-```
-
-This allows **anyone** to verify the compiler’s behavior with a single command.
+1. Go to the repository on GitHub  
+2. Click **Code → Download ZIP**  
+3. Extract the ZIP file anywhere on your computer
 
 ---
+
+## ▶️ 2. Run the Compiler
+
+1. Open the extracted folder  
+2. Locate the file:
+src/compilador.py
+3. Run the file:
+
+---
+
+## 🧭 3. Choose What You Want to Do
+
+When the compiler starts, this menu appears:
+
+========================================
+
+Bienvenido al Mini-Language Compiler
+
+Selecciona una opción:
+
+Cargar archivo .txt desde ruta
+
+Ejecutar la demo (ejemplo.txt)
+
+========================================
+
+---
+
+## ✔️ Option 1 — Compile Your Own `.txt` Program
+
+## ✔️ Option 2 — Run the Demo Program
+
+This will show:
+
+- Tokens generated  
+- AST construction  
+- TAC (Three-Address Code)  
+- Execution results  
+
+---
+
+## 🎉 Ready to Use!
+
+Anyone can download the project and run the compiler easily in Python
+
 # 🧠 Language Features
 
 ## 🟦 Data Types Supported
