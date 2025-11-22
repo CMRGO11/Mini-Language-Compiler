@@ -1,0 +1,9 @@
+// Semantic Error Test 2: Type mismatch
+// Expected behavior:
+// ERROR: cannot assign int to bool variable 'flag'
+
+int x;
+bool flag;
+
+x = 5;
+flag = x;     // invalid: assigning int to bool
