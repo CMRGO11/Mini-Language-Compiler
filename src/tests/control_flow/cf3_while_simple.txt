@@ -1,0 +1,14 @@
+// Control Flow Test 3: While loop
+// Expected output:
+// 3
+// 2
+// 1
+
+int x;
+
+x = 3;
+
+while (x > 0) {
+    print(x);
+    x = x - 1;
+}
