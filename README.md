@@ -21,6 +21,7 @@ This compiler was developed as part of an academic assignment.
 
 ```
 Mini-Language-Compiler/
+├── run_tests.py   
 ├── src/
 │   ├── compilador.py        # Main compiler implementation
 │   └── placeholder.txt
