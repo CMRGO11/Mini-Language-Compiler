@@ -35,85 +35,57 @@ Mini-Language-Compiler/
 └── README.md
 ```
 
-# 🛠️ How to Run the Compiler (Single File)
+# 🛠️ How to Run the Compiler (download & test)
 
-The compiler must be run from the **root directory** of the project.
+1. Download the project as ZIP from GitHub (`Code → Download ZIP`).
+2. Extract the ZIP.
+3. Open a terminal in the extracted folder.
+4. Run
 
-### ▶️ Compile a single program:
+#### On Windows:
+1. Open **PowerShell** or **Command Prompt**.
+2. Navigate to the folder, e.g.:
 
 ```bash
-python src/compilador.py src/tests/basic/basic2_assignments.txt
+cd %HOMEPATH%\Desktop\Mini-Language-Compiler-main
 ```
 
-(Mac/Linux users may need `python3` instead of `python`.)
-
-When executed, the compiler performs:
-1. Lexical Analysis  
-2. Parsing (AST)  
-3. Semantic Analysis (stub)  
-4. TAC Generation  
-5. Simulated Execution  
-
-The generated TAC is saved to:
-
-```
-output.tac
+#### On Mac/Linux:
+```bash
+cd ~/Downloads/Mini-Language-Compiler-main
 ```
 
 ---
 
-# ⚡ RUN EVERYTHING AT ONCE (recommended)
+### Run all tests automatically
 
-If you want to run **all 12 tests with a single command**, this project includes:
-
-```
-run_tests.py
-```
-
-### ▶️ To run all tests automatically:
+If you have Python installed:
 
 ```bash
 python run_tests.py
 ```
+### After running the tests?
 
-This will:
+The script will:
 
-- Locate the 12 test files  
-- Compile each one  
-- Generate TAC  
-- Simulate execution  
-- Print PASS/FAIL for every test  
-- Print a final summary  
-
-Example output:
+- Compile every program inside:
+  - `src/tests/basic/`
+  - `src/tests/control_flow/`
+  - `src/tests/semantic_errors/`
+  - `src/tests/integration/`
+- Generate TAC for each test
+- Simulate execution
+- Print PASS/FAIL for each case
+- Print a final summary:
 
 ```
-Running test: src/tests/basic/basic1_declarations.txt
-[PASS]
-
-Running test: src/tests/control_flow/cf3_while_simple.txt
-[PASS]
-
-...
 Total tests: 12
-Passed: 12
-Failed: 0
+Passed:      12
+Failed:      0
 🎉 ALL TESTS PASSED SUCCESSFULLY!
 ```
 
----
-
-
-# 🧪 Running ALL Tests Manually (Alternative Method)
-
-If you prefer running tests without the Python script:
-
-```bash
-for f in src/tests/basic/*.txt; do python src/compilador.py "$f"; done
-for f in src/tests/control_flow/*.txt; do python src/compilador.py "$f"; done
-for f in src/tests/semantic_errors/*.txt; do python src/compilador.py "$f"; done
-for f in src/tests/integration/*.txt; do python src/compilador.py "$f"; done
-```
+This allows **anyone** to verify the compiler’s behavior with a single command.
 
 ---
 # 🧠 Language Features
