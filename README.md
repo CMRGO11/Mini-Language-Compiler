@@ -1,4 +1,4 @@
-# 🚀 Mini Language Compiler  
+# Mini Language Compiler  
 ### *Python-based educational compiler with Lexer → Parser → AST → TAC pipeline*
 
 This project implements a simplified compiler for a small imperative language.  
@@ -21,7 +21,7 @@ This compiler was developed as part of an academic assignment.
 
 ```
 Mini-Language-Compiler/
-├── run_tests.py   
+├── run_tests.py             # Script to run all tests automatically
 ├── src/
 │   ├── compilador.py        # Main compiler implementation
 │   └── placeholder.txt
@@ -35,13 +35,11 @@ Mini-Language-Compiler/
 └── README.md
 ```
 
----
+# 🛠️ How to Run the Compiler (Single File)
 
-# 🛠️ How to Run the Compiler
+The compiler must be run from the **root directory** of the project.
 
-You must run the compiler from the root directory of the project.
-
-## ▶️ Running a single test program
+### ▶️ Compile a single program:
 
 ```bash
 python src/compilador.py src/tests/basic/basic2_assignments.txt
@@ -49,15 +47,14 @@ python src/compilador.py src/tests/basic/basic2_assignments.txt
 
 (Mac/Linux users may need `python3` instead of `python`.)
 
-When executed, the compiler will go through:
+When executed, the compiler performs:
+1. Lexical Analysis  
+2. Parsing (AST)  
+3. Semantic Analysis (stub)  
+4. TAC Generation  
+5. Simulated Execution  
 
-1. **Lexical analysis**  
-2. **Parsing (AST generation)**  
-3. **Semantic checking** (currently a stub – always passes)  
-4. **TAC generation**  
-5. **Simulated TAC execution**  
-
-The resulting TAC file is written to:
+The generated TAC is saved to:
 
 ```
 output.tac
@@ -65,11 +62,51 @@ output.tac
 
 ---
 
-# 🧪 Running ALL 12 tests automatically
+# ⚡ RUN EVERYTHING AT ONCE (recommended)
 
-### ▶️ Recommended method (Codespaces / Linux / Mac)
+If you want to run **all 12 tests with a single command**, this project includes:
 
-Paste and run this in your terminal:
+```
+run_tests.py
+```
+
+### ▶️ To run all tests automatically:
+
+```bash
+python run_tests.py
+```
+
+This will:
+
+- Locate the 12 test files  
+- Compile each one  
+- Generate TAC  
+- Simulate execution  
+- Print PASS/FAIL for every test  
+- Print a final summary  
+
+Example output:
+
+```
+Running test: src/tests/basic/basic1_declarations.txt
+[PASS]
+
+Running test: src/tests/control_flow/cf3_while_simple.txt
+[PASS]
+
+...
+Total tests: 12
+Passed: 12
+Failed: 0
+🎉 ALL TESTS PASSED SUCCESSFULLY!
+```
+
+---
+
+
+# 🧪 Running ALL Tests Manually (Alternative Method)
+
+If you prefer running tests without the Python script:
 
 ```bash
 for f in src/tests/basic/*.txt; do python src/compilador.py "$f"; done
@@ -78,17 +115,7 @@ for f in src/tests/semantic_errors/*.txt; do python src/compilador.py "$f"; done
 for f in src/tests/integration/*.txt; do python src/compilador.py "$f"; done
 ```
 
-This executes:
-
-- every test program  
-- generates TAC  
-- simulates output  
-- prints compilation logs  
-
-A `run_tests.py` file may be added later for full automation.
-
 ---
-
 # 🧠 Language Features
 
 ## 🟦 Data Types Supported
