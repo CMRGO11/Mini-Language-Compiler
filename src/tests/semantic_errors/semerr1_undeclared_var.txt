@@ -1,0 +1,6 @@
+// Semantic Error Test 1: Use of undeclared variable
+// Expected behavior:
+// ERROR: variable 'x' not declared
+
+x = 10;
+print(x);
