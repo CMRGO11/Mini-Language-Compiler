@@ -186,8 +186,6 @@ Intentionally incorrect programs:
 - use of undeclared variables  
 - invalid type assignments  
 
-(*Note: The semantic analyzer is currently a stub, so these tests do not fail yet.*)
-
 ## ✔️ Integration Tests (2)
 Full programs combining:
 - declarations  
@@ -198,19 +196,6 @@ Full programs combining:
 - printing  
 
 ---
-
-# 👥 Contributors
-
-This project was developed by a multi-role team.  
-This repository corresponds to **Persona 4: Testing & Documentation**, responsible for:
-
-- Creating the full 12-program test suite  
-- Writing and maintaining documentation  
-- Creating the README  
-- Writing the language specification  
-- Ensuring proper project structure and validation  
-- Supporting the final presentation/demo  
-
 
 
 
