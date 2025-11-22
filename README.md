@@ -165,40 +165,6 @@ Simulated TAC Execution
 
 ---
 
-# 🧪 Test Suite (12 Total)
-
-## ✔️ Basic Tests (4)
-Covers:
-- declarations  
-- assignments  
-- arithmetic  
-- boolean expressions  
-
-## ✔️ Control Flow Tests (4)
-Covers:
-- `if`
-- `if-else`
-- `while`
-- nested blocks
-
-## ✔️ Semantic Error Tests (2)
-Intentionally incorrect programs:
-- use of undeclared variables  
-- invalid type assignments  
-
-## ✔️ Integration Tests (2)
-Full programs combining:
-- declarations  
-- assignments  
-- arithmetic  
-- booleans  
-- control flow  
-- printing  
-
----
-
-
-
 # 📘 Mini Language – Official Language Specification  
 ### Developed for the Mini Language Compiler (Python)
 
