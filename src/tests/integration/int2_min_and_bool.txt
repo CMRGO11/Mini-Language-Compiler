@@ -1,0 +1,24 @@
+// Integration Test 2: Find min(x, y) and bool result
+// Expected output:
+// 3
+// true
+
+int x;
+int y;
+int min;
+bool isPositive;
+
+x = 10;
+y = 3;
+
+// Compute minimum
+if (x < y) {
+    min = x;
+} else {
+    min = y;
+}
+
+print(min);
+
+isPositive = min > 0;
+print(isPositive);
