@@ -1,8 +1,8 @@
-# Mini Language Compiler  
-### *Python-based educational compiler with Lexer → Parser → AST → TAC pipeline*
+# Mini Language Compiler
 
-This project implements a simplified compiler for a small imperative language.  
-It includes all major compilation stages:
+### _Python-based educational compiler with Lexer → Parser → AST → TAC pipeline_
+
+This project implements a simplified compiler for a small imperative language.It includes all major compilation stages:
 
 - **Lexical Analysis**
 - **Syntactic Analysis (Recursive Descent Parser)**
@@ -21,19 +21,46 @@ This compiler was developed as part of an academic assignment.
 
 ```
 Mini-Language-Compiler/
-├── run_tests.py             # Script to run all tests automatically
-├── src/
-│   ├── compilador.py        # Main compiler implementation
-│   └── placeholder.txt
-├── tests/
-│   ├── basic/               # Basic test cases
-│   ├── control_flow/        # If, if-else, while tests
-│   ├── semantic_errors/     # Programs containing intentional semantic errors
-│   └── integration/         # Full programs mixing multiple features
-├── docs/
-│   └── placeholder.txt
-└── README.md
+├── compilador.py              # Main compiler entry point
+├── run_tests.py               # Complete test suite runner
+├── src/                       # Compiler modules
+│   ├── __init__.py
+│   ├── lexer.py              # Lexical analysis (tokenization)
+│   ├── parser.py             # Syntactic analysis (AST generation)
+│   ├── semantic.py           # Semantic analysis (stub)
+│   ├── tac_generator.py      # TAC code generation
+│   └── vm.py                 # TAC virtual machine
+├── tests/                     # Comprehensive test suite
+│   ├── basic/                # Basic language features
+│   ├── control_flow/         # Conditional and loop structures
+│   ├── semantic_errors/      # Programs with intentional errors
+│   └── integration/          # Complex multi-feature programs
+├── scripts/                   # Convenience scripts
+│   ├── compile.bat           # Windows compile script
+│   ├── run.bat               # Windows execute script
+│   ├── compile.sh            # Linux/Mac compile script
+│   └── run.sh                # Linux/Mac execute script
+└── docs/
+    ├── README.md
+    └── language-spec.md      # Complete language specification
 ```
+
+# 🔧 Module Responsibilities
+## Core Compiler Modules:
+lexer.py - Tokenizes source code into tokens
+
+parser.py - Parses tokens into Abstract Syntax Tree (AST)
+
+semantic.py - Performs semantic validation (currently stub)
+
+tac_generator.py - Generates Three-Address Code from AST
+
+vm.py - Executes TAC programs
+
+## Support Modules:
+compilador.py - Main orchestrator and CLI interface
+
+run_tests.py - Automated test execution and reporting
 
 # 🛠️ How to Download and Run the Compiler
 
@@ -45,22 +72,20 @@ Follow these steps:
 
 ## 📥 1. Download the Project
 
-1. Go to the repository on GitHub  
-2. Click **Code → Download ZIP**  
+1. Go to the repository on GitHub
+2. Click **Code → Download ZIP**
 3. Extract the ZIP file anywhere on your computer
 
 ---
 
-## ▶️ 2. Run the Compiler
+## ▶️ 2. Run the Compiler: three different ways
 
-1. Open the extracted folder  
+### 1. Interactive Mode
+
+1. Open the extracted folder
 2. Locate the file:
-src/compilador.py
+   src/compilador.py
 3. Run the file:
-
----
-
-## 🧭 3. Choose What You Want to Do
 
 When the compiler starts, this menu appears:
 
@@ -78,46 +103,92 @@ Ejecutar la demo (ejemplo.txt)
 
 ---
 
-## ✔️ Option 1 — Compile Your Own `.txt` Program
+#### ✔️ Option 1 — Compile Your Own `.txt` Program
 
-## ✔️ Option 2 — Run the Demo Program
+#### ✔️ Option 2 — Run the Demo Program
 
 This will show:
 
-- Tokens generated  
-- AST construction  
-- TAC (Three-Address Code)  
-- Execution results  
+- Tokens generated
+- AST construction
+- TAC (Three-Address Code)
+- Execution results
 
 ---
 
-## 🎉 Ready to Use!
+### 2. Command Line Interface
 
-Anyone can download the project and run the compiler easily in Python
+```bash
+# Compile source to TAC
+python compilador.py compile program.src -o output.tac
+
+# Execute TAC code
+python compilador.py run output.tac
+
+# Compile and execute in one step
+python compilador.py compile program.src --run
+```
+
+### 3. Using Convenience Scripts
+```bash
+# Windows
+scripts\compile.bat program.src -o output.tac
+scripts\run.bat output.tac
+
+# Linux/Mac
+scripts/compile.sh program.src -o output.tac
+scripts/run.sh output.tac
+```
+
+### Running tests
+```bash
+python run_tests.py
+```
+
+The test suite includes:
+
+4 basic tests: declarations, assignments, arithmetic, expressions
+
+4 control-flow tests: if/else, while loops, nested structures
+
+2 semantic error tests: undeclared variables, type errors
+
+2 integration tests: complex programs mixing multiple features
+
+
+---
+
+
 
 # 🧠 Language Features
 
 ## 🟦 Data Types Supported
+
 - `int`
 - `bool`
 
 ## 🟩 Statements
+
 ### ✔️ Variable Declarations
+
 ```
 int x;
 ```
 
 ### ✔️ Assignments
+
 ```
 x = 10;
 ```
 
 ### ✔️ Print Statement
+
 ```
 print(x);
 ```
 
 ### ✔️ If / Else
+
 ```c
 if (x > 0) {
     print(1);
@@ -127,6 +198,7 @@ if (x > 0) {
 ```
 
 ### ✔️ While Loop
+
 ```c
 while (x > 0) {
     x = x - 1;
@@ -134,6 +206,7 @@ while (x > 0) {
 ```
 
 ## 🟧 Expressions Supported
+
 - Arithmetic: `+ - * /`
 - Comparison: `< <= > >= == !=`
 - Logical: `&& || !`
@@ -165,22 +238,22 @@ Simulated TAC Execution
 
 ---
 
-# 📘 Mini Language – Official Language Specification  
+# 📘 Mini Language – Official Language Specification
+
 ### Developed for the Mini Language Compiler (Python)
 
 ---
 
 # 1. Overview
 
-Mini Language is a small imperative programming language designed for educational purposes.  
-Its goal is to provide a clear and simple platform to explore compiler construction techniques, including:
+Mini Language is a small imperative programming language designed for educational purposes.Its goal is to provide a clear and simple platform to explore compiler construction techniques, including:
 
-- Lexical analysis  
-- Parsing with a recursive descent parser  
-- Abstract Syntax Tree (AST) construction  
-- Semantic analysis  
-- Three-Address Code (TAC) generation  
-- Simulated execution of TAC  
+- Lexical analysis
+- Parsing with a recursive descent parser
+- Abstract Syntax Tree (AST) construction
+- Semantic analysis
+- Three-Address Code (TAC) generation
+- Simulated execution of TAC
 
 Mini Language supports variables, arithmetic expressions, boolean expressions, conditional execution, loops, and printing values.
 
@@ -191,9 +264,11 @@ Mini Language supports variables, arithmetic expressions, boolean expressions, c
 Mini Language is case-sensitive.
 
 ## 2.1 Whitespace
+
 Whitespace may appear between tokens and is ignored except for separating tokens.
 
 ## 2.2 Comments
+
 Single-line comments begin with:
 
 ```
@@ -203,6 +278,7 @@ Single-line comments begin with:
 Everything after `//` until the end of the line is ignored.
 
 ## 2.3 Identifiers
+
 Identifiers are sequences of letters and digits, beginning with a letter:
 
 ```
@@ -210,6 +286,7 @@ Identifiers are sequences of letters and digits, beginning with a letter:
 ```
 
 ## 2.4 Keywords
+
 Reserved keywords cannot be used as identifiers:
 
 ```
@@ -226,26 +303,31 @@ print
 ## 2.5 Operators
 
 ### Arithmetic
+
 ```
 +   -   *   /
 ```
 
 ### Comparison
+
 ```
 <   <=   >   >=   ==   !=
 ```
 
 ### Logical
+
 ```
 &&   ||   !
 ```
 
 ### Assignment
+
 ```
 =
 ```
 
 ## 2.6 Punctuation
+
 ```
 ;   (   )   {   }
 ```
@@ -256,8 +338,8 @@ print
 
 Mini Language supports two primitive types:
 
-- **int** — 32-bit integer  
-- **bool** — Boolean (`true` or `false`)  
+- **int** — 32-bit integer
+- **bool** — Boolean (`true` or `false`)
 
 Variables must be declared before use.
 
@@ -320,28 +402,32 @@ primary         ::= INT
 
 # 5. Semantic Rules
 
-Although the reference compiler includes a *semantic stub*, the full language specification defines expected semantic behavior.
+Although the reference compiler includes a _semantic stub_, the full language specification defines expected semantic behavior.
 
 ### 5.1 Declaration Rules
+
 - A variable must be declared before it is used.
 - Variables cannot be redeclared in the same scope.
 
 ### 5.2 Type Checking Rules
+
 - Arithmetic operators apply only to `int`.
 - Comparison operators apply only to `int`.
 - Logical operators apply only to `bool`.
 - Assignment must match variable type:
-  
+
 ```
 int x;
 x = true;   // ERROR
 ```
 
 ### 5.3 Boolean Semantics
+
 - `true` and `false` are valid boolean literals.
 - Boolean expressions must evaluate to either boolean literal.
 
 ### 5.4 Control Flow Conditions
+
 - The condition of `if` and `while` must be boolean:
 
 ```
@@ -352,7 +438,7 @@ if (3) { ... }     // ERROR: condition must be bool
 
 # 6. Runtime Behavior
 
-Mini Language has no runtime input.  
+Mini Language has no runtime input.
 Output is produced by the `print(expr)` statement.
 
 ```
@@ -369,7 +455,7 @@ Values are printed as:
 
 # 7. TAC (Three-Address Code) Specification
 
-The compiler lowers AST expressions into TAC form.  
+The compiler lowers AST expressions into TAC form.
 All intermediate expressions become temporary variables:
 
 ```
@@ -484,7 +570,7 @@ TAC Execution (simulated)
 
 # 10. Limitations & Notes
 
-- The semantic analyzer is currently a minimal stub and does *not* detect semantic errors.
+- The semantic analyzer is currently a minimal stub and does _not_ detect semantic errors.
 - The runtime is simulated and does not yet execute full TAC semantics.
 - No function definitions or user-defined types.
 - No arrays, strings, or pointers.
@@ -493,7 +579,7 @@ TAC Execution (simulated)
 ---
 
 # 11. Authors
- 
+
 **Names:**
 Bruno Tarango Garay (182639)
 
@@ -502,6 +588,3 @@ Daniel de Jesús Martínez Gallegos (179788)
 Diego Bedolla Carrillo (181439)
 
 Diego Camargo Padilla (180892)
-
-
-

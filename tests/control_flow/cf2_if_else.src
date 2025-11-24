@@ -1,0 +1,12 @@
+// Control Flow Test 2: if-else
+// Expected output:
+// 0
+
+int x;
+
+x = 3;
+
+if (x > 10)
+    print(1);
+else
+    print(0);
